@@ -6,4 +6,8 @@ export class Recette {
         public tempsPreparatioo: number,
         public tempsCuisson: number 
         ){}
+
+        public static emptyRecette() : Recette {
+            return new Recette(0,"",null,null,0,0)
+        } 
 }
