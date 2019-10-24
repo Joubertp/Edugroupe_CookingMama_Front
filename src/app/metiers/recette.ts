@@ -3,7 +3,7 @@ export class Recette {
         public nom: string,
         public dateCreation: Date,
         public dateDerniereEdition: Date,
-        public tempsPreparatioo: number,
+        public tempsPreparation: number,
         public tempsCuisson: number 
         ){}
 
