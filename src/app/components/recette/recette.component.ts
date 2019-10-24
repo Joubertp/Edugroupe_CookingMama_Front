@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Recette } from '../../metiers/recette';
-import { RecetteRepositoryService } from 'src/app/services/recette-repository.service';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core'
+import { Recette } from '../../metiers/recette'
+import { RecetteRepositoryService } from 'src/app/services/recette-repository.service'
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-recette',
@@ -16,23 +16,17 @@ export class RecetteComponent implements OnInit {
     private recetteRep: RecetteRepositoryService) { }
 
   ngOnInit() {
-    this.recette = Recette.emptyRecette()
+    this.recette = null
     this.activeRoute.params.subscribe(params => this.dataInit(params))
-    this.recette.tempsCuisson = 123
   }
 
   public dataInit(params){
       // let id : number = Number(params["id"])
-      console.log("params",params)
-      let id = 4
+      // console.log("params",params)
+      let id = 1
       this.recetteRep.getRecetteById(id)    
-      .then( r => {
-        this.recette = r;
-        console.log("r",r)
-      })
-      .then( r => {
-        console.log("this.recette",this.recette)
-      })
+      .then( r => {   return this.recette = r})
+      // .then( r => {   console.log("recette",r)})
   }
 
   public minToString(minutes: number){
@@ -44,12 +38,7 @@ export class RecetteComponent implements OnInit {
       else
         return hour + " h et " + minutes + " min"
     }
-    return minutes + " min";
-  }
-
-  public getRecette() : Recette{
-    console.log("getRecette()",this.recette)
-    return this.recette
+    return minutes + " min"
   }
 
 }

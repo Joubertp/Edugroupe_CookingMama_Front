@@ -1,7 +1,37 @@
-<h2>{{getRecette().nom}}</h2>
-<div>
-    <a>allalalal{{la}}</a><br>
-    <a>Temps de préparation : {{minToString(getRecette().tempsPreparation)}}</a><br>
-    <a>Temps de cuisson : {{minToString(getRecette().tempsCuisson)}}</a><br>
-    <a>{{getRecette()}}</a><br>
+<div class="container">
+    <div *ngIf="recette">
+        <div class="card">
+            <div class="card-header">
+                <h2>{{recette.nom}}</h2>
+            </div>
+            <div class="card-body">
+                <a>{{recette.description}}</a>
+                <div class="row">
+                    <div class="col-sm-3" *ngIf="recette.ingredients">
+                        <h3>Ingredients</h3>
+                        <ul>
+                            <li *ngFor="let ingredient of recette.ingredients">
+                                {{ingredient.valeur + ingredient.ingredient.nom}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-9">
+                        <h3>Préparation</h3>
+                        <a *ngIf="recette.tempsPreparation">Temps de préparation :
+                            {{minToString(recette.tempsPreparation)}}</a><br>
+                        <a *ngIf="recette.tempsCuisson">Temps de cuisson : {{minToString(recette.tempsCuisson)}}</a><br>
+                        <ul>
+                            <li *ngFor="let etape of recette.listeEtapes">
+                                {{etape.description}}
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
 </div>
