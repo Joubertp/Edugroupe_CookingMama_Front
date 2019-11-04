@@ -21,12 +21,11 @@ export class RecetteComponent implements OnInit {
   }
 
   public dataInit(params){
-      // let id : number = Number(params["id"])
+      let id : number = Number(params["id"])
       // console.log("params",params)
-      let id = 1
       this.recetteRep.getRecetteById(id)    
       .then( r => {   return this.recette = r})
-      // .then( r => {   console.log("recette",r)})
+      .then( r => {   console.log("recette",r)})
   }
 
   public minToString(minutes: number){
