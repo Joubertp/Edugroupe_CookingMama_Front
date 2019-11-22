@@ -1,0 +1,11 @@
+<div>
+    <input list="ingredients">
+    <datalist id="ingredients">
+        <option *ngFor="let i of ingredients"
+        value={{i.nom}}        
+        >
+        {{i.nom}}  
+    </option>
+    </datalist>
+
+</div>
