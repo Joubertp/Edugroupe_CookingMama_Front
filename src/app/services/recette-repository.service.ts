@@ -68,8 +68,6 @@ export class RecetteRepositoryService {
   }
 
   public setIdIngredients(idIngredients: number[]): void {
-    this.noPage = 0
     this.idIngredients = idIngredients
-    this.refreshList()
   }
 }
