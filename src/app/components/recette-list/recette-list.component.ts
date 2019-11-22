@@ -57,7 +57,6 @@ export class RecetteListComponent implements OnInit {
     return this.child.selectedIngr
   }
   public rechercher(): void {
-    this.noPage = 1
     let ingredientList = this.child.selectedIngr
     if(ingredientList.length === 0){
       this.recetteRep.setIdIngredients([])
@@ -69,6 +68,10 @@ export class RecetteListComponent implements OnInit {
       console.log(idIngredients)
       this.recetteRep.setIdIngredients(idIngredients)
     }
+    if(this.noPage != 1)
+      this.noPage = 1
+    else
+      this.pageChanged(1)
   }
 
 

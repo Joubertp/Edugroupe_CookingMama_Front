@@ -25,6 +25,10 @@ export class RecetteComponent implements OnInit {
       // console.log("params",params)
       this.recetteRep.getRecetteById(id)    
       .then( r => {   return this.recette = r})
+      .then( r => {
+        r.listeEtapes.sort(function(a, b){return a.numero - b.numero})
+        return r
+      })
       .then( r => {   console.log("recette",r)})
   }
 
