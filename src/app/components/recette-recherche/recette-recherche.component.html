@@ -1,9 +1,13 @@
-<div>
+<div class="form-group">
+
+    <input class="form-control" placeholder="nom de recette" [(ngModel)]="nomRecette">
     <ng-select [items]="ingredients" 
         bindLabel="nom" 
         placeholder="Ingredients" 
         multiple="true"
         [(ngModel)]="selectedIngr">
     </ng-select>
+    <button class="btn btn-success"
+    (click)="rechercher()">Rechercher</button>  
 
 </div>

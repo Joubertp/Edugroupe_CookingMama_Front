@@ -14,6 +14,7 @@ export class RecetteRepositoryService {
   private noPage: number
   private taillePage: number
   private idIngredients: number[]
+  private nomRecette: string
 
   private recettesSubject: BehaviorSubject<Page<Recette>>
 
@@ -32,6 +33,7 @@ export class RecetteRepositoryService {
 
   public setNoPage(noPage: number): void {
     this.noPage = noPage
+    console.log("To set No Page :",noPage)
     this.refreshList()
   }
 
@@ -42,13 +44,12 @@ export class RecetteRepositoryService {
     let urlParams: UrlParams = {
       page: "" + this.noPage,
       size: "" + this.taillePage
-
     }
 
-    if (this.idIngredients && this.idIngredients.length != 0) {
+    if (this.idIngredients && this.idIngredients.length != 0)
       urlParams.idIngredients = this.idIngredients
-    } 
-
+    if (this.nomRecette && this.nomRecette.length != 0) 
+      urlParams.nomRecette = this.nomRecette
 
     console.log("urlParams", urlParams)
     this.http.get<Page<Recette>>(this.SERVICE_URL + '/', { params: urlParams })
@@ -56,7 +57,7 @@ export class RecetteRepositoryService {
         data => this.recettesSubject.next(data),
         error => {
           if(error.status == 404){
-              // this.recettesSubject.next(Page.emptyPage<Recette>())
+              this.recettesSubject.next(Page.emptyPage<Recette>())
           }
         }
         )
@@ -69,5 +70,13 @@ export class RecetteRepositoryService {
 
   public setIdIngredients(idIngredients: number[]): void {
     this.idIngredients = idIngredients
+  }
+
+  public getNoPage(): number{
+    return this.noPage
+  }
+
+  public setNomRecette(nom: string): void{
+    this.nomRecette = nom
   }
 }
