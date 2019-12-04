@@ -1,14 +1,17 @@
-<div class="d-flex justify-content-center">
-    <div>
-        <pagination [boundaryLinks]="true"
-        [totalItems]="totalItems"
-        [itemsPerPage]="taillePage"
-        [ngModel]="noPage"
-        (pageChanged)="pageChanged($event)"
-        class="mt-1"></pagination> 
+<div>
+        <ngb-pagination [boundaryLinks]="true"
+        [collectionSize]="totalItems"
+        [pageSize]="taillePage"
+        [(page)]="noPage"
+        (pageChange)="pageChanged($event)">
+            <ng-template ngbPaginationPrevious>Previous</ng-template>
+            <ng-template ngbPaginationNext>Next</ng-template>
+            <ng-template ngbPaginationLast>Last</ng-template>
+            <ng-template ngbPaginationFirst>First</ng-template>
+        </ngb-pagination> 
         <table>
             <tr>
-                <th>Date de la derniere edition</th>
+                <th>Derniere Edition</th>
                 <th>Nom</th>
             </tr>
             <tr *ngFor="let r of recettes.content" (click)="goTo(r.id)">
@@ -16,16 +19,14 @@
                 <td>{{r.nom}}</td>
             </tr>
         </table>
-        <pagination [boundaryLinks]="true"
-        [totalItems]="totalItems"
-        [itemsPerPage]="taillePage"
-        [ngModel]="noPage"
-        (pageChanged)="pageChanged($event)"
-        class="mt-1"></pagination> 
-    </div>
-    <div>
-        <app-recette-recherche></app-recette-recherche>  
-        <button class="btn btn-success"
-        (click)="rechercher()">Rechercher</button>  
-    </div>
+        <ngb-pagination [boundaryLinks]="true"
+        [collectionSize]="totalItems"
+        [pageSize]="taillePage"
+        [(page)]="noPage"
+        (pageChange)="pageChanged($event)">
+            <ng-template ngbPaginationPrevious>Previous</ng-template>
+            <ng-template ngbPaginationNext>Next</ng-template>
+            <ng-template ngbPaginationLast>Last</ng-template>
+            <ng-template ngbPaginationFirst>First</ng-template>
+        </ngb-pagination> 
 </div>
