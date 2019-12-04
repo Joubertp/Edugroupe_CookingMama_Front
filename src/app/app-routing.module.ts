@@ -1,13 +1,15 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { RecetteComponent } from './components/recette/recette.component';
-import { RecetteListComponent } from './components/recette-list/recette-list.component';
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
+import { RecetteComponent } from './components/recette/recette.component'
+import { RecettesComponent } from './components/recettes/recettes.component'
+import { RecetteRechercheComponent } from './components/recette-recherche/recette-recherche.component'
 
 
 const routes: Routes = [
+  {path: 'recettes', component: RecettesComponent},
   {path: 'recettes/:id', component: RecetteComponent},
-  {path: 'recettes', component: RecetteListComponent}
-];
+  {path: 'recettes-recherche', component: RecetteRechercheComponent}
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
