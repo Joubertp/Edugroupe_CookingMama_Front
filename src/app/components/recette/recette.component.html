@@ -11,7 +11,8 @@
                         <h3>Ingredients</h3>
                         <ul>
                             <li *ngFor="let ingredient of recette.ingredients">
-                                {{ingredient.valeur}}
+                                {{(ingredient.quantite != 0) ? ingredient.quantite : ""}} 
+                                {{ingredient.text}}
                             </li>
                         </ul>
                     </div>
@@ -32,6 +33,10 @@
             </div>
 
         </div>
+    </div>
+    <div *ngIf="commentaires && commentaires.length != 0">
+        <app-commentaire *ngFor="let c of commentaires"
+        [commentaire]="c"></app-commentaire>
     </div>
 
 </div>

@@ -13,6 +13,8 @@ import { RecetteRechercheComponent } from './components/recette-recherche/recett
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { RecettesComponent } from './components/recettes/recettes.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { CommentaireComponent } from './components/commentaire/commentaire.component';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { RecettesComponent } from './components/recettes/recettes.component';
     RecetteListComponent,
     RecetteRechercheComponent,
     RecettesComponent,
+    UserProfileComponent,
+    CommentaireComponent,
   ],
   imports: [
     NgbModule,
