@@ -1,13 +1,15 @@
 <div>
-        <ngb-pagination [boundaryLinks]="true"
+    <!-- [boundaryLinks]="true" -->
         [collectionSize]="totalItems"
         [pageSize]="taillePage"
         [(page)]="noPage"
         (pageChange)="pageChanged($event)">
+        [maxSize]="3"
+        [rotate]="true">
             <ng-template ngbPaginationPrevious>Previous</ng-template>
             <ng-template ngbPaginationNext>Next</ng-template>
-            <ng-template ngbPaginationLast>Last</ng-template>
-            <ng-template ngbPaginationFirst>First</ng-template>
+            <!-- <ng-template ngbPaginationLast>Last</ng-template>
+            <ng-template ngbPaginationFirst>First</ng-template> -->
         </ngb-pagination> 
         <table>
             <tr>
@@ -19,14 +21,14 @@
                 <td>{{r.nom}}</td>
             </tr>
         </table>
-        <ngb-pagination [boundaryLinks]="true"
+        <ngb-pagination 
         [collectionSize]="totalItems"
         [pageSize]="taillePage"
         [(page)]="noPage"
         (pageChange)="pageChanged($event)">
+        [maxSize]="3"
+        [rotate]="true">
             <ng-template ngbPaginationPrevious>Previous</ng-template>
             <ng-template ngbPaginationNext>Next</ng-template>
-            <ng-template ngbPaginationLast>Last</ng-template>
-            <ng-template ngbPaginationFirst>First</ng-template>
         </ngb-pagination> 
 </div>
