@@ -9,7 +9,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 const routes: Routes = [
   {path: 'recettes', component: RecettesComponent},
   {path: 'recettes/:id', component: RecetteComponent},
-  {path: 'recettes-recherche', component: RecetteRechercheComponent}
+  {path: 'recettes-recherche', component: RecetteRechercheComponent},
   {path: 'user/:id', component: UserProfileComponent},
 ]
 
