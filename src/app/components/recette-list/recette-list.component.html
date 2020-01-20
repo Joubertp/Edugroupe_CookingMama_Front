@@ -1,9 +1,10 @@
 <div>
     <!-- [boundaryLinks]="true" -->
+    <ngb-pagination
         [collectionSize]="totalItems"
         [pageSize]="taillePage"
         [(page)]="noPage"
-        (pageChange)="pageChanged($event)">
+        (pageChange)="pageChanged($event)"
         [maxSize]="3"
         [rotate]="true">
             <ng-template ngbPaginationPrevious>Previous</ng-template>
@@ -25,7 +26,7 @@
         [collectionSize]="totalItems"
         [pageSize]="taillePage"
         [(page)]="noPage"
-        (pageChange)="pageChanged($event)">
+        (pageChange)="pageChanged($event)"
         [maxSize]="3"
         [rotate]="true">
             <ng-template ngbPaginationPrevious>Previous</ng-template>
