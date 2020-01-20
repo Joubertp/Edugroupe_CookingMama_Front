@@ -11,6 +11,7 @@ const routes: Routes = [
   {path: 'recettes/:id', component: RecetteComponent},
   {path: 'recettes-recherche', component: RecetteRechercheComponent},
   {path: 'user/:id', component: UserProfileComponent},
+  { path: '', pathMatch:'full', redirectTo: '/recettes'}
 ]
 
 @NgModule({
