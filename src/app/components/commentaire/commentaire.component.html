@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-header">
+        <div>
+            {{commentaire.user.pseudo}}
+            <div class="float-right">
+
+                {{commentaire.dateCreation | date: 'h:m d/M/y' }}
+            </div>
+        </div>
+    </div>
+    <div class="card-body">{{commentaire.content}}
+        <button type="button" 
+        class="btn btn-success float-right"
+        (click)="setMod('EDIT')">Edit</button>
+    </div>
+</div>
