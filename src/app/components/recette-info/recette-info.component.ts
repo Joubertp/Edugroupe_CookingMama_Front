@@ -6,10 +6,10 @@ import { getLocaleDateFormat } from '@angular/common'
 
 @Component({
   selector: 'app-recette',
-  templateUrl: './recette.component.html',
-  styleUrls: ['./recette.component.css']
+  templateUrl: './recette-info.component.html',
+  styleUrls: ['./recette-info.component.css']
 })
-export class RecetteComponent implements OnInit {
+export class RecetteInfoComponent implements OnInit {
 
   recette: Recette
   commentaires: any = [{
