@@ -2,15 +2,29 @@ import { Component, OnInit } from '@angular/core'
 import { Recette } from '../../metiers/recette'
 import { RecetteRepositoryService } from 'src/app/services/recette-repository.service'
 import { ActivatedRoute } from '@angular/router'
+import { getLocaleDateFormat } from '@angular/common'
 
 @Component({
   selector: 'app-recette',
-  templateUrl: './recette.component.html',
-  styleUrls: ['./recette.component.css']
+  templateUrl: './recette-info.component.html',
+  styleUrls: ['./recette-info.component.css']
 })
-export class RecetteComponent implements OnInit {
+export class RecetteInfoComponent implements OnInit {
 
   recette: Recette
+  commentaires: any = [{
+    content : "Incroyable cette recette rend plus beau plus fort et plus intelligent!",
+    user : {
+      pseudo : "SuperGauffre" 
+    },
+    dateCreation : new Date()
+  },{
+    content : "J'ai essayé cette recette un dixaine de foie et moi je dit qu'il y a quelque chose de magic la dedans.",
+    user : {
+      pseudo : "JojoPasCool" 
+    },
+    dateCreation : new Date()
+  }]
 
   constructor(private activeRoute : ActivatedRoute,
     private recetteRep: RecetteRepositoryService) { }
