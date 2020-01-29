@@ -9,8 +9,6 @@ import { RecetteRepositoryService } from 'src/app/services/recette-repository.se
 })
 export class RecetteRechercheComponent implements OnInit {
 
-  @Input() recetteRep: RecetteRepositoryService
-  
   ingredients: Ingredient[] = [
     { id: 1, nom: "lardon" },
     { id: 2, nom: "pâte à pizza" },
@@ -23,7 +21,7 @@ export class RecetteRechercheComponent implements OnInit {
   selectedIngr: Ingredient[] = []
   nomRecette : string
 
-  constructor() {
+  constructor(private recetteRep: RecetteRepositoryService) {
   }
 
   ngOnInit() {
