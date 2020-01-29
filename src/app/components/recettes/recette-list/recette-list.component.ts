@@ -20,9 +20,8 @@ export class RecetteListComponent implements OnInit {
   totalItems: number
   private recetteSub: Subscription
 
-  @Input() recetteRep: RecetteRepositoryService
-
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private recetteRep: RecetteRepositoryService) { }
 
   ngOnInit() {
 

@@ -9,10 +9,7 @@ import { RecetteListComponent } from './recette-list/recette-list.component';
 })
 export class RecettesComponent implements OnInit {
 
-  @ViewChild(RecetteListComponent, { static: false }) child: RecetteListComponent
-
-  constructor(private recetteRep: RecetteRepositoryService) {
-    console.log("recetteRep",recetteRep)
+  constructor() {
    }
 
   ngOnInit() {
