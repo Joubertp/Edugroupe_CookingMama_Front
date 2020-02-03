@@ -1,0 +1,38 @@
+<div>
+    <ngb-pagination
+        [collectionSize]="totalItems"
+        [pageSize]="taillePage"
+        [(page)]="noPage"
+        (pageChange)="pageChanged($event)"
+        [maxSize]="3"
+        [rotate]="true">
+            <ng-template ngbPaginationPrevious>Previous</ng-template>
+            <ng-template ngbPaginationNext>Next</ng-template>
+        </ngb-pagination> 
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Role</th>
+            </tr>
+            <tr *ngFor="let u of users.content" (click)="goTo(u.id)">
+                <td>{{u.username}}</td>
+                <td>
+                    <div  *ngFor="let r of u.roles">
+                        <app-role-tag
+                        [roleName]=r.roleName></app-role-tag>
+                        
+                    </div>
+                </td >
+            </tr>
+        </table>
+        <ngb-pagination 
+        [collectionSize]="totalItems"
+        [pageSize]="taillePage"
+        [(page)]="noPage"
+        (pageChange)="pageChanged($event)"
+        [maxSize]="3"
+        [rotate]="true">
+            <ng-template ngbPaginationPrevious>Previous</ng-template>
+            <ng-template ngbPaginationNext>Next</ng-template>
+        </ngb-pagination> 
+</div>
