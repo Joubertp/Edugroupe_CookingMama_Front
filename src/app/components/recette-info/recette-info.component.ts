@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Recette } from '../../metiers/recette'
 import { RecetteRepositoryService } from 'src/app/services/recette-repository.service'
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 import { getLocaleDateFormat } from '@angular/common'
 
 @Component({
@@ -27,6 +27,7 @@ export class RecetteInfoComponent implements OnInit {
   }]
 
   constructor(private activeRoute : ActivatedRoute,
+    private router: Router,
     private recetteRep: RecetteRepositoryService) { }
 
   ngOnInit() {
@@ -56,6 +57,10 @@ export class RecetteInfoComponent implements OnInit {
         return hour + " h et " + minutes + " min"
     }
     return minutes + " min"
+  }
+
+  public goToUser(id : number){
+    this.router.navigateByUrl("utilisateurs/" + id)
   }
 
 }

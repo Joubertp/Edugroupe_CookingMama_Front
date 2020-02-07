@@ -3,6 +3,7 @@
         <div class="card">
             <div class="card-header">
                 <h2>{{recette.nom}}</h2>
+                <div (click)="goToUser(recette.auteur.id)">Auteur : {{recette.auteur.username}}</div>
             </div>
             <div class="card-body">
                 <a>{{recette.description}}</a>
