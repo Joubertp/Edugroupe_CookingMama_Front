@@ -1,12 +1,8 @@
-<div class="d-flex justify-content-center">
-    <div class="row">
-        <div class="col-8">
-            <app-recette-list [recetteRep]="recetteRep"></app-recette-list>
-        </div>
-        <div class="col-4">
-            <app-recette-recherche [recetteRep]="recetteRep"></app-recette-recherche>
-        </div>
-
+<div class="jumbotron text-center">
+    <div class ="container">
+        <app-recette-recherche [recetteRep]="recetteRep"></app-recette-recherche>
     </div>
-
+    <div class ="container">
+    <app-recette-list [recetteRep]="recetteRep"></app-recette-list>
+    </div>
 </div>

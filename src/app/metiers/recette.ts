@@ -1,5 +1,6 @@
 import { IngredientRecette } from './ingredientRecette'
 import { EtapeRecette } from './etapeRecette'
+import { ImageRecette } from './imageRecette'
 
 export class Recette {
     constructor(public id: number,
@@ -9,7 +10,8 @@ export class Recette {
         public tempsPreparation: number,
         public tempsCuisson: number, 
         public ingredients: IngredientRecette[],
-        public listeEtapes: EtapeRecette[]
+        public listeEtapes: EtapeRecette[],
+        public images? : ImageRecette[]
         ){}
 
         public static emptyRecette() : Recette {

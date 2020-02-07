@@ -53,5 +53,12 @@ export class RecetteListComponent implements OnInit {
   public click(event){
     console.log(event)
   }
+
+  public RenvoyerImage(r: Recette) : string {
+    if (r.images && r.images.length > 0)
+      return `http://localhost:8080/images_recette/${r.images[0].id}/data`;
+    else
+      return "assets/img/recipe.jpg";
+  }
  
 }
