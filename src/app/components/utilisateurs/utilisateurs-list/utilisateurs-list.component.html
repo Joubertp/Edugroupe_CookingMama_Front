@@ -17,11 +17,11 @@
             <tr *ngFor="let u of users.content" (click)="goTo(u.id)">
                 <td>{{u.username}}</td>
                 <td>
-                    <div  *ngFor="let r of u.roles">
+                    <span class="mr-1"  *ngFor="let r of u.roles">
                         <app-role-tag
                         [roleName]=r.roleName></app-role-tag>
                         
-                    </div>
+                    </span>
                 </td >
             </tr>
         </table>

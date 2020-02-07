@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Page } from '../metiers/page';
 import { User } from '../metiers/user';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Recette } from '../metiers/recette';
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +41,14 @@ export class UserRepositoryService {
       )
    
    }
+
+   public getUserById(id: number){
+    return this.http.get<User>(`${this.SERVICE_URL}/${id}`)
+    .toPromise()
+   }
+
+
+
 
    
 
