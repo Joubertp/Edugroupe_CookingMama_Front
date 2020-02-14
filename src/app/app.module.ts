@@ -20,6 +20,7 @@ import { UtilisateurProfileComponent } from './components/utilisateur-profile/ut
 import { RoleTagComponent } from './components/role-tag/role-tag.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { UtilisateurStatusComponent } from './components/utilisateur-status/utilisateur-status.component';
+import { IngredientInfoComponent } from './components/ingredient-info/ingredient-info.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { UtilisateurStatusComponent } from './components/utilisateur-status/util
     RoleTagComponent,
     SignupComponent,
     UtilisateurStatusComponent,
+    IngredientInfoComponent,
   ],
   imports: [
     NgbModule,
