@@ -19,6 +19,8 @@ import { UtilisateursListComponent } from './components/utilisateurs/utilisateur
 import { UtilisateurProfileComponent } from './components/utilisateur-profile/utilisateur-profile.component';
 import { RoleTagComponent } from './components/role-tag/role-tag.component';
 import { RecetteEditComponent } from './components/recette-edit/recette-edit.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { UtilisateurStatusComponent } from './components/utilisateur-status/utilisateur-status.component';
 
 
 @NgModule({
@@ -34,6 +36,8 @@ import { RecetteEditComponent } from './components/recette-edit/recette-edit.com
     UtilisateurProfileComponent,
     RoleTagComponent,
     RecetteEditComponent,
+    SignupComponent,
+    UtilisateurStatusComponent,
   ],
   imports: [
     NgbModule,
