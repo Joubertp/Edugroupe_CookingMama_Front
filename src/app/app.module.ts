@@ -18,6 +18,7 @@ import { UtilisateursComponent } from './components/utilisateurs/utilisateurs.co
 import { UtilisateursListComponent } from './components/utilisateurs/utilisateurs-list/utilisateurs-list.component';
 import { UtilisateurProfileComponent } from './components/utilisateur-profile/utilisateur-profile.component';
 import { RoleTagComponent } from './components/role-tag/role-tag.component';
+import { RecetteEditComponent } from './components/recette-edit/recette-edit.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { RoleTagComponent } from './components/role-tag/role-tag.component';
     UtilisateursListComponent,
     UtilisateurProfileComponent,
     RoleTagComponent,
+    RecetteEditComponent,
   ],
   imports: [
     NgbModule,

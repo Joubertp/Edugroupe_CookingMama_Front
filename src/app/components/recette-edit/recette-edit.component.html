@@ -1,0 +1,44 @@
+<div class="container">
+    <div *ngIf="recette">
+        <div class="card">
+            <div class="card-header">
+                <h2>{{recette.nom}}</h2>
+                <div (click)="goToUser(recette.auteur.id)">Auteur : {{recette.auteur.username}}</div>
+            </div>
+            <div class="card-body">
+                <a>Description :</a>
+                <textarea>{{recette.description}}</textarea>
+                <div class="row">
+                    <div class="col-sm-5" *ngIf="recette.ingredients">
+                        <h3>Ingredients</h3>
+                        <ul>
+                            <li *ngFor="let ingredient of recette.ingredients">
+                                {{(ingredient.quantite != 0) ? ingredient.quantite : ""}} 
+                                {{ingredient.text}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-7">
+                        <h3>Préparation</h3>
+                        <a *ngIf="recette.tempsPreparation">Temps de préparation :
+                            {{minToString(recette.tempsPreparation)}}</a><br>
+                        <a *ngIf="recette.tempsCuisson">Temps de cuisson : {{minToString(recette.tempsCuisson)}}</a><br>
+                        <ul>
+                            <li *ngFor="let etape of recette.listeEtapes">
+                                {{etape.description}}
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div *ngIf="commentaires && commentaires.length != 0">
+        <app-commentaire *ngFor="let c of commentaires"
+        [commentaire]="c"></app-commentaire>
+    </div>
+
+</div>
