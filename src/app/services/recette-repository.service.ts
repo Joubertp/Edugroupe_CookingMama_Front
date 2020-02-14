@@ -59,8 +59,7 @@ export class RecetteRepositoryService {
           if(error.status == 404){
               this.recettesSubject.next(Page.emptyPage<Recette>())
           }
-        }
-        )
+        })
   }
 
   public getRecetteById(id: number) {
