@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core'
 import { Ingredient } from 'src/app/metiers/ingredient'
 import { RecetteRepositoryService } from 'src/app/services/recette-repository.service'
+import { IngredientRepositoryService } from 'src/app/services/ingredient-repository.service'
 
 @Component({
   selector: 'app-recette-recherche',
@@ -9,22 +10,18 @@ import { RecetteRepositoryService } from 'src/app/services/recette-repository.se
 })
 export class RecetteRechercheComponent implements OnInit {
 
-  ingredients: Ingredient[] = [
-    { id: 1, nom: "lardon" },
-    { id: 2, nom: "pâte à pizza" },
-    { id: 3, nom: "fromage de chèvre long" },
-    { id: 4, nom: "coulis de tomate" },
-    { id: 5, nom: "roquefort" },
-    { id: 6, nom: "mozzarella" }
-  ]
+  ingredients: Ingredient[] = []
   
   selectedIngr: Ingredient[] = []
   nomRecette : string
 
-  constructor(private recetteRep: RecetteRepositoryService) {
+  constructor(private recetteRep: RecetteRepositoryService, 
+    private ingredientRep : IngredientRepositoryService) {
   }
 
   ngOnInit() {
+    this.ingredientRep.getList()
+      .then(list => this.ingredients = list)
   }
 
   public rechercher(): void {

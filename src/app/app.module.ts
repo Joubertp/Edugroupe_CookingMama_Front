@@ -18,6 +18,7 @@ import { UtilisateursComponent } from './components/utilisateurs/utilisateurs.co
 import { UtilisateursListComponent } from './components/utilisateurs/utilisateurs-list/utilisateurs-list.component';
 import { UtilisateurProfileComponent } from './components/utilisateur-profile/utilisateur-profile.component';
 import { RoleTagComponent } from './components/role-tag/role-tag.component';
+import { RecetteEditComponent } from './components/recette-edit/recette-edit.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { UtilisateurStatusComponent } from './components/utilisateur-status/utilisateur-status.component';
 
@@ -34,6 +35,7 @@ import { UtilisateurStatusComponent } from './components/utilisateur-status/util
     UtilisateursListComponent,
     UtilisateurProfileComponent,
     RoleTagComponent,
+    RecetteEditComponent,
     SignupComponent,
     UtilisateurStatusComponent,
   ],
