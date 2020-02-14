@@ -3,6 +3,7 @@ import { Recette } from '../../metiers/recette'
 import { RecetteRepositoryService } from 'src/app/services/recette-repository.service'
 import { ActivatedRoute, Router } from '@angular/router'
 import { getLocaleDateFormat } from '@angular/common'
+import { IngredientRecette } from 'src/app/metiers/ingredientRecette'
 
 @Component({
   selector: 'app-recette',
@@ -61,6 +62,13 @@ export class RecetteInfoComponent implements OnInit {
 
   public goToUser(id : number){
     this.router.navigateByUrl("utilisateurs/" + id)
+  }
+
+  public onIngredientClick(ing : any) {
+    // ing est l'objet particulier à une projection qu'on recupère du back 
+    // quand on clique sur un item de la liste des ingrédients d'une recette,
+    // et on a besoin de récupérer l'id de l'ingrédient
+    this.router.navigateByUrl('/ingredients/'+ ing.idIngredient);
   }
 
 }
