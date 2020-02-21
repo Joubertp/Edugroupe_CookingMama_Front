@@ -37,7 +37,8 @@ export class UtilisateursListComponent implements OnInit {
         this.taillePage = pu.size
         this.totalItems = pu.totalElements
         this.users = pu
-      })
+      });
+    this.userRep.refreshList();
   }
 
   public goTo(id : number){
