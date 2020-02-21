@@ -61,7 +61,7 @@ export class RecetteInfoComponent implements OnInit {
   }
 
   public goToUser(id : number){
-    this.router.navigateByUrl("utilisateurs/" + id)
+    this.router.navigateByUrl("/utilisateurs/" + id)
   }
 
   public onIngredientClick(ing : any) {

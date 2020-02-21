@@ -21,7 +21,7 @@ export class UserRepositoryService {
     this.taillePage = 10
     let emptyPage = Page.emptyPage<User>()
     this.userSubject = new BehaviorSubject(emptyPage)
-    this.refreshList()
+    //this.refreshList()
    }
 
 
