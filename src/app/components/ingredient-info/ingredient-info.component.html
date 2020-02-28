@@ -1,0 +1,34 @@
+<div class="container">
+    <div *ngIf="ingredient">
+        <div class="card">
+            <div class="card-header">
+                <h2>{{ingredient.nom}}</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <p>{{ingredient.descritpion}}</p>    
+                </div>
+            </div>
+        </div>
+
+        <h2>Achetez nos produits ! :</h2>
+        <div *ngIf="ingredientsFournisseurs" class="row">
+            <div class="col-sm-4" *ngFor="let ingFour of ingredientsFournisseurs">
+                <div class="card" style="height: 400px;">
+                    <div class="card-header">
+                        <h4>{{ingFour.libelle}}</h4>
+                        <p>Fournisseur : {{ingFour.fournisseur.libelle}}</p>
+                    </div>
+                    <div class="card-body overflow-auto">
+                        <div class="row">
+                            <p>Infos : {{ingFour.infos}}</p>    
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <p>Prix : {{ingFour.prix}}€</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
