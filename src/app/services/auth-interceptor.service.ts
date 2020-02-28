@@ -20,7 +20,7 @@ export class AuthInterceptorService implements HttpInterceptor {
       req = req.clone({setHeaders : {Authorization: `Basic ${this.authManager.getCredentials()}`}});
     }
 
-    console.log("request",req)
+    // console.log("request",req)
     return next.handle(req)
                .pipe(catchError((error, caught) => {
                   console.log("error " + error);

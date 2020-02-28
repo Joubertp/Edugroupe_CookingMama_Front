@@ -4,11 +4,13 @@ import { Ingredient } from './ingredient';
 export class IngredientRecette {
     constructor(
         public id: number,
+        public text: string,
+        public quantite : number,
         public recette: Recette,
-        public ingredient: Ingredient
+        public idIngredient: number
     ) {}
 
-    public static emptyIngredientRecette() : IngredientRecette {
-        return new IngredientRecette(0,null,null)
+    public static newEmpty() : IngredientRecette {
+        return new IngredientRecette(0,"",0,null,0)
     }
 }

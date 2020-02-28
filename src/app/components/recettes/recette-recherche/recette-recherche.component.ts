@@ -25,8 +25,8 @@ export class RecetteRechercheComponent implements OnInit {
   }
 
   public rechercher(): void {
-    console.log("recetteRep", this.recetteRep)
-    console.log("nomRecette à recherche :",this.nomRecette )
+    // console.log("recetteRep", this.recetteRep)
+    // console.log("nomRecette à recherche :",this.nomRecette )
     let idList = []
     for (let ingredient of this.selectedIngr) {
       idList.push(ingredient.id)

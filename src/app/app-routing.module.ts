@@ -6,10 +6,12 @@ import { RecetteRechercheComponent } from './components/recettes/recette-recherc
 import { UtilisateursListComponent } from './components/utilisateurs/utilisateurs-list/utilisateurs-list.component'
 import { UtilisateurProfileComponent } from './components/utilisateur-profile/utilisateur-profile.component'
 import { SignupComponent } from './components/signup/signup.component'
+import { RecetteEditComponent } from './components/recette-info/recette-edit/recette-edit.component'
 
 const routes: Routes = [
   {path: 'recettes', component: RecettesComponent},
   {path: 'recettes/:id', component: RecetteInfoComponent},
+  {path: 'recettes/:id/edit', component: RecetteEditComponent},
   {path: 'recettes-recherche', component: RecetteRechercheComponent},
   {path: 'utilisateurs/:id', component: UtilisateurProfileComponent},
   {path: 'utilisateurs', component: UtilisateursListComponent},

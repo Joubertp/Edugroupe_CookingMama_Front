@@ -33,7 +33,7 @@ export class RecetteRepositoryService {
 
   public setNoPage(noPage: number): void {
     this.noPage = noPage
-    console.log("To set No Page :",noPage)
+    // console.log("To set No Page :", noPage)
     this.refreshList()
   }
 
@@ -48,16 +48,16 @@ export class RecetteRepositoryService {
 
     if (this.idIngredients && this.idIngredients.length != 0)
       urlParams.idIngredients = this.idIngredients
-    if (this.nomRecette && this.nomRecette.length != 0) 
+    if (this.nomRecette && this.nomRecette.length != 0)
       urlParams.nomRecette = this.nomRecette
 
-    console.log("urlParams", urlParams)
+    // console.log("urlParams", urlParams)
     this.http.get<Page<Recette>>(this.SERVICE_URL + '/', { params: urlParams })
       .subscribe(
         data => this.recettesSubject.next(data),
         error => {
-          if(error.status == 404){
-              this.recettesSubject.next(Page.emptyPage<Recette>())
+          if (error.status == 404) {
+            this.recettesSubject.next(Page.emptyPage<Recette>())
           }
         })
   }
@@ -71,11 +71,26 @@ export class RecetteRepositoryService {
     this.idIngredients = idIngredients
   }
 
-  public getNoPage(): number{
+  public getNoPage(): number {
     return this.noPage
   }
 
-  public setNomRecette(nom: string): void{
+  public setNomRecette(nom: string): void {
     this.nomRecette = nom
+  }
+
+  public update(recette: Recette) {
+    const body = {
+      "recette" : recette,
+      "ingredients" : recette.ingredients
+    }
+
+    console.log("ingredients : ",body.ingredients)
+
+    this.http.put(this.SERVICE_URL, body)
+    .subscribe(
+      data => console.log("data : ",data),
+      error => console.log("error : ",error)
+      )
   }
 }

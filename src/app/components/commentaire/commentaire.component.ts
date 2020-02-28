@@ -16,12 +16,12 @@ export class CommentaireComponent implements OnInit {
     if(!["GET","EDIT","POST"].includes(this.mod)){
       this.mod = "GET"
     }
-    console.log("commentaire",this.commentaire)
+    // console.log("commentaire",this.commentaire)
   }
 
   public setMod(mod: string){
     this.mod = mod
-    console.log("Mode :",this.mod)
+    // console.log("Mode :",this.mod)
   }
 
 }
