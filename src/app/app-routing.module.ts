@@ -7,6 +7,7 @@ import { UtilisateursListComponent } from './components/utilisateurs/utilisateur
 import { UtilisateurProfileComponent } from './components/utilisateur-profile/utilisateur-profile.component'
 import { SignupComponent } from './components/signup/signup.component'
 import { RecetteEditComponent } from './components/recette-info/recette-edit/recette-edit.component'
+import { IngredientInfoComponent } from './components/ingredient-info/ingredient-info.component'
 
 const routes: Routes = [
   {path: 'recettes', component: RecettesComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'utilisateurs/:id', component: UtilisateurProfileComponent},
   {path: 'utilisateurs', component: UtilisateursListComponent},
   {path: 'signup', component: SignupComponent},
+  {path: 'ingredients/:id', component: IngredientInfoComponent},
   { path: '', pathMatch:'full', redirectTo: '/recettes'}
 ]
 
