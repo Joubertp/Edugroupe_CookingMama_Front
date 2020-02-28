@@ -1,0 +1,137 @@
+<div class="container">
+    <div *ngIf="recette">
+        <div class="card">
+            <div class="card-header">
+                <input type="text" value="{{recette.nom}}" class="form-control">
+                <div (click)="goToUser(recette.auteur.id)">Auteur : {{recette.auteur.username}}</div>
+            </div>
+            <div class="card-body">
+                <a>Description :</a>
+                <textarea class="form-control">{{recette.description}}</textarea>
+                <div class="row">
+                    <div class="col-sm-12" *ngIf="recette.ingredients">
+                     <!-- liste des Ingredients de la recette    -->
+                        <h3>Ingredients</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Ingredient</th>
+                                    <th scope="col">Quantitée</th>
+                                    <th scope="col">Texte</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let ingredient of recette.ingredients; let i = index">
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        <select [(ngModel)]="ingredient.idIngredient" class="form-control">
+                                            <option *ngFor="let i of ingredientsList" value="{{i.id}}">{{i.nom}}
+                                            </option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <input type="number" [(ngModel)]="ingredient.quantite" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" [(ngModel)]="ingredient.text" class="form-control">
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger" (click)="ingredDelet(i)">
+                                            <span class="fas fa-trash-alt"></span>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button type="button" class="btn btn-success" (click)="ajouterIngr()">
+                            <span class="fas fa-plus"> Ajouter un Ingredient à la recette</span>
+                        </button>
+
+                    </div>
+                    <div class="col-sm-12">
+                         <!-- liste des Etapes de la recette    -->
+                        <h3>Préparation</h3>
+
+                        <div *ngIf="recette.tempsPreparation" class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">
+                                    Temps de préparation :</span>
+                            </div>
+                            <input type="number" value="{{recette.tempsPreparation}}" class="form-control">
+                            <!-- <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">
+                                    {{minToString(recette.tempsPreparation)}}</span>
+                            </div> -->
+                        </div>
+
+                        <div *ngIf="recette.tempsCuisson" class="input-group mb-3">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">
+                                    Temps de cuisson :</span>
+                            </div>
+                            <input type="number" value="{{recette.tempsCuisson}}" class="form-control">
+                            <!-- <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">
+                                    {{minToString(recette.tempsCuisson)}}</span>
+                            </div> -->
+                        </div>
+
+                        <h4>Etapes :</h4>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Texte</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let etape of recette.listeEtapes; let i = index">
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        {{etape.numero}}
+                                    </td>
+                                    <td>
+                                        <textarea class="form-control">{{etape.description}}</textarea>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger" (click)="etapeDelet(i)">
+                                            <span class="fas fa-trash-alt"></span>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <button type="button" class="btn btn-success" (click)="ajouterEtapes()">
+                            <span class="fas fa-plus"> Ajouter une etape</span>
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="card-footer">
+                <a routerLink="/recettes/{{recette.id}}">
+                    <button type="button" class="btn btn-success" (click)="save()">
+                        <span class="fas fa-check"> Valider</span>
+                    </button>
+                </a>
+                <a routerLink="/recettes/{{recette.id}}">
+                    <button class="btn btn-danger"><span class="fas fa-times"></span> Annuler</button>  
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
