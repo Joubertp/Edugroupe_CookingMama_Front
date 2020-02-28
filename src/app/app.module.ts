@@ -21,6 +21,7 @@ import { RoleTagComponent } from './components/role-tag/role-tag.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { UtilisateurStatusComponent } from './components/utilisateur-status/utilisateur-status.component';
 import { RecetteEditComponent } from './components/recette-info/recette-edit/recette-edit.component';
+import { IngredientInfoComponent } from './components/ingredient-info/ingredient-info.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { RecetteEditComponent } from './components/recette-info/recette-edit/rec
     SignupComponent,
     UtilisateurStatusComponent,
     RecetteEditComponent,
+    IngredientInfoComponent,
   ],
   imports: [
     NgbModule,
